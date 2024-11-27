@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular Simplu</title>
+    <style>
+        .form-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .form-container input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #006400; /* Verde închis */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #004d00; /* Verde mai închis la hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Formular simplu -->
+    <div class="form-container">
+        <input type="text" id="messageInput" placeholder="Scrie mesajul tău aici...">
+        <button type="button" onclick="clearMessage()">Trimite</button>
+    </div>
+
+    <script>
+        function clearMessage() {
+            // Găsește câmpul input și golește valoarea acestuia
+            const inputField = document.getElementById('messageInput');
+            if (inputField.value !== '') {
+                inputField.value = ''; // Șterge textul
+                inputField.placeholder = 'Mesaj trimis!'; // Mesaj de confirmare
+            } else {
+                inputField.placeholder = 'Introduceți un mesaj!'; // Feedback dacă nu există text
+            }
+        }
+    </script>
+</body>
+</html>
